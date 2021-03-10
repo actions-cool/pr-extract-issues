@@ -1,0 +1,13 @@
+name: extract
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions-cool/pr-extract-issues@main
+        with:
+          way: 'title'
