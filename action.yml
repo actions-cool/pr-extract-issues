@@ -1,22 +1,25 @@
 # https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions
-name: 'Action JS Template'
-description: 'A simple javascript template for rapid development of GitHub actions.'
+name: 'PR Extract Issues'
+description: 'A GitHub Action help you extract issues from pr commit or title or body.'
 author: 'xrkffgg'
 
+# https://actions-cool.github.io/github-action-branding/
 branding:
-  # https://actions-cool.github.io/github-action-branding/
-  icon: 'file'
-  color: 'blue'
+  icon: 'hard-drive'
+  color: 'white'
 
 inputs:
-  GITHUB_TOKEN:
+  token:
     description: Secret GitHub API token to use for making API requests.
     default: ${{ github.token }}
     required: true
+  way:
+    description: The way to query issues.
+    required: true
 
-#outputs:
-#  result:
-#    description: action result
+outputs:
+  issues:
+    description: Get issues numbers.
 
 runs:
   using: 'node12'

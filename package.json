@@ -1,18 +1,13 @@
 {
-  "name": "action-js-template",
+  "name": "pr-extract-issues",
   "version": "0.0.1",
   "private": true,
-  "description": "A javascript template for rapid development of GitHub actions.",
+  "description": "A GitHub Action help you extract issues from pr commit or title or body.",
   "main": "src/main.js",
   "scripts": {
     "package": "ncc build",
     "format": "prettier --write src/*.js",
     "format-check": "prettier --check src/*.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/actions-cool/action-js-template",
-    "branch": "main"
   },
   "author": "xrkffgg",
   "license": "MIT",
