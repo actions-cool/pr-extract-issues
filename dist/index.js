@@ -5950,7 +5950,7 @@ async function run() {
       let issues = [];
       const way = core.getInput('way');
       if (way === 'title') {
-        let arr = title.split('');
+        let arr = title.split(' ');
         arr.forEach(it => {
           if (it.startsWith('#')) {
             issues.push(it.replace('#', ''));
@@ -5973,7 +5973,7 @@ async function run() {
         });
         commits.forEach(commit => {
           let message = commit.commit.message;
-          let messageArr = message.split('');
+          let messageArr = message.split(' ');
           messageArr.forEach(it => {
             if (it.startsWith('#')) {
               issues.push(it.replace('#', ''));
