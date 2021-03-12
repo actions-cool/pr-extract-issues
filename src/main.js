@@ -77,14 +77,14 @@ async function run() {
           core.info(`Actions: [add-labels][${issue}][${labels}] success!`);
         }
         if (comment) {
-          comment.replace('${number}', `#${issue}`);
+          const body = comment.replace('${number}', `#${issue}`);
           await octokit.issues.createComment({
             owner,
             repo,
             issue_number: issue,
-            body: comment,
+            body,
           });
-          core.info(`Actions: [create-comment][${issue}][${comment}] success!`);
+          core.info(`Actions: [create-comment][${issue}][${body}] success!`);
         }
         if (close == 'true') {
           await octokit.issues.update({
