@@ -1,6 +1,6 @@
 {
   "name": "pr-extract-issues",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "description": "A GitHub Action help you extract issues from pr commit or title or body.",
   "main": "src/main.js",
