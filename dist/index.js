@@ -6055,7 +6055,7 @@ async function run() {
             owner,
             repo,
             issue_number: issue,
-            comment,
+            body: comment,
           });
           core.info(`Actions: [create-comment][${issue}][${comment}] success!`);
         }

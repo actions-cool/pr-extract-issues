@@ -6,12 +6,14 @@
 
 ## How to use?
 
+> Please pay attention to the trigger timing
+
 ```yml
 name: PR Extract Issues
 
 on:
   pull_request:
-    types: [opened, edited, synchronize]
+    types: [opened, edited, synchronize, closed]
 
 jobs:
   extract:
