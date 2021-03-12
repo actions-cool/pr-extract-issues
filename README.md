@@ -1,4 +1,4 @@
-# PR Extract Issues
+# 🤠 PR Extract Issues
 
 ![](https://img.shields.io/github/workflow/status/actions-cool/pr-extract-issues/CI?style=flat-square)
 [![](https://img.shields.io/badge/marketplace-pr--extract--issues-blueviolet?style=flat-square)](https://github.com/marketplace/actions/pr-extract-issues)
