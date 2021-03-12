@@ -1,6 +1,7 @@
 const core = require('@actions/core');
 const { Octokit } = require('@octokit/rest');
 const github = require('@actions/github');
+const { dealStringToArr } = require('actions-util');
 
 // **********************************************************
 const token = core.getInput('token');
@@ -30,7 +31,7 @@ async function run() {
         let arr = body.split('\n');
         arr.forEach(it => {
           if (it.startsWith('#')) {
-            issues.push(it.replace('#', ''));
+            issues.push(it.replace('#', '').replace('\n', ''));
           }
         });
       } else if (way === 'commit') {
@@ -56,6 +57,45 @@ async function run() {
 
       core.info(`[Action: Query Issues][${issues}]`);
       core.setOutput('issues', issues);
+
+      const lables = core.getInput('issues-lables');
+      const comment = core.getInput('issues-comment');
+      const close = core.getInput('issues-close');
+
+      if (!lables && !comment && !close) {
+        return false;
+      }
+
+      for await (let issue of issues) {
+        if (lables) {
+          await octokit.issues.addLabels({
+            owner,
+            repo,
+            issue_number: issue,
+            labels: dealStringToArr(labels),
+          });
+          core.info(`Actions: [add-labels][${issue}][${labels}] success!`);
+        }
+        if (comment) {
+          comment.replace('${number}', `#${issue}`);
+          await octokit.issues.createComment({
+            owner,
+            repo,
+            issue_number: issue,
+            comment,
+          });
+          core.info(`Actions: [create-comment][${issue}][${comment}] success!`);
+        }
+        if (close == 'true') {
+          await octokit.issues.update({
+            owner,
+            repo,
+            issue_number: issue,
+            state: 'closed',
+          });
+          core.info(`Actions: [close-issue][${issue}] success!`);
+        }
+      }
     } else {
       core.setFailed(outEventErr);
     }
