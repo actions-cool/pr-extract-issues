@@ -4,6 +4,10 @@
 [![](https://img.shields.io/badge/marketplace-pr--extract--issues-blueviolet?style=flat-square)](https://github.com/marketplace/actions/pr-extract-issues)
 [![](https://img.shields.io/github/v/release/actions-cool/pr-extract-issues?style=flat-square&color=orange)](https://github.com/actions-cool/pr-extract-issues/releases)
 
+## How to use?
+
+
+
 ## ⚡ Feedback
 
 You are very welcome to try it out and put forward your comments. You can use the following methods:
