@@ -40,7 +40,7 @@ jobs:
   - fix: fix other #123 #456 #789
     - Get: 123 456 789
   - refctore: use other #222 #333#44
-    - Get：222 33344
+    - Get: 222 33344
   - So you should start with a space # and end with a space
 - `body`：The PR body
   - Like: https://github.com/actions-cool/pr-extract-issues/pull/4
