@@ -6,6 +6,10 @@
 
 ## 🚀 How to use?
 
+### Preview
+
+https://github.com/actions-cool/pr-extract-issues/pull/15
+
 > Please pay attention to the trigger timing
 
 ```yml
