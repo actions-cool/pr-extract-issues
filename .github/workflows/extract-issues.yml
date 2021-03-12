@@ -10,4 +10,4 @@ jobs:
     steps:
       - uses: actions-cool/pr-extract-issues@main
         with:
-          way: 'commit'
+          way: 'body'
