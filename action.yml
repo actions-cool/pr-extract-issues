@@ -16,7 +16,7 @@ inputs:
   way:
     description: The way to query issues.
     required: true
-  issues-lables:
+  issues-labels:
     description: Extra operations on issues
   issues-comment:
     description: Extra operations on issues

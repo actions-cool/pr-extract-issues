@@ -6031,16 +6031,16 @@ async function run() {
       core.info(`[Action: Query Issues][${issues}]`);
       core.setOutput('issues', issues);
 
-      const lables = core.getInput('issues-lables');
+      const labels = core.getInput('issues-labels');
       const comment = core.getInput('issues-comment');
       const close = core.getInput('issues-close');
 
-      if (!lables && !comment && !close) {
+      if (!labels && !comment && !close) {
         return false;
       }
 
       for await (let issue of issues) {
-        if (lables) {
+        if (labels) {
           await octokit.issues.addLabels({
             owner,
             repo,

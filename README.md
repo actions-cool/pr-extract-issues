@@ -20,7 +20,7 @@ jobs:
       - uses: actions-cool/pr-extract-issues@v1.0.0
         with:
           way: 'commit'
-          issues-lables: 'l1, l2'
+          issues-labels: 'l1, l2'
           issues-comment: |
             HI。这个 issue: ${number} 已经被修复了。
           issues-close: true
@@ -32,7 +32,7 @@ jobs:
 | -- | -- | -- | -- |
 | token | GitHub token | string | ✖ |
 | way | The way to query issues. Options: `title` `body` `commit` | string | ✔ |
-| issues-lables | Extra labels on issues | string | ✖ |
+| issues-labels | Extra labels on issues | string | ✖ |
 | issues-comment | Extra comment on issues | string | ✖ |
 | issues-close | Extra close issues | string | ✖ |
 
@@ -46,7 +46,7 @@ jobs:
   - Like: https://github.com/actions-cool/pr-extract-issues/pull/4
   - Branch whole line display with # start
 - `commit`: Like `title`
-- `issues-lables`: Support multiple, need to be separated by comma
+- `issues-labels`: Support multiple, need to be separated by comma
 - `issues-comment`: `${number}` will be replaced with the current issue number
 - `issues-close`: Whether close issue
 
