@@ -25,7 +25,7 @@ jobs:
   extract:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions-cool/pr-extract-issues@v1.0.0
+      - uses: actions-cool/pr-extract-issues@v1.1.0
         with:
           way: 'commit'
           issues-labels: 'l1, l2'
@@ -40,6 +40,7 @@ jobs:
 | -- | -- | -- | -- |
 | token | GitHub token | string | ✖ |
 | way | The way to query issues. Options: `title` `body` `commit` | string | ✔ |
+| filter-label | Further filter issues through label | string | ✖ |
 | issues-labels | Extra labels on issues | string | ✖ |
 | issues-comment | Extra comment on issues | string | ✖ |
 | issues-close | Extra close issues | string | ✖ |
@@ -54,6 +55,7 @@ jobs:
   - Like: https://github.com/actions-cool/pr-extract-issues/pull/4
   - Branch whole line display with # start
 - `commit`: Like `title`
+- `filter-label`: Note that github default hooks. That is, `fix` `close` `resolve` directly followed by issue number will be closed after success merge
 - `issues-labels`: Support multiple, need to be separated by comma
 - `issues-comment`: `${number}` will be replaced with the current issue number
 - `issues-close`: Whether close issue

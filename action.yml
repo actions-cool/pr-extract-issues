@@ -10,12 +10,14 @@ branding:
 
 inputs:
   token:
-    description: Secret GitHub API token to use for making API requests.
+    description: Secret GitHub API token to use for making API requests
     default: ${{ github.token }}
     required: true
   way:
-    description: The way to query issues.
+    description: The way to query issues
     required: true
+  filter-label:
+    description: Further filter issues through label
   issues-labels:
     description: Extra operations on issues
   issues-comment:
@@ -25,7 +27,7 @@ inputs:
 
 outputs:
   issues:
-    description: Get issues numbers.
+    description: Get issues numbers
 
 runs:
   using: 'node12'
