@@ -55,6 +55,25 @@ async function run() {
         core.setFailed('Wrong way!');
       }
 
+      const filterLabel = core.getInput('filter-label');
+      if (filterLabel) {
+        let arr = [];
+        for await (let no of issues) {
+          const {
+            data: { labels },
+          } = await octokit.issues.get({
+            owner,
+            repo,
+            issue_number: no,
+          });
+          let o = labels.find(k => k.name == filterLabel);
+          if (o) {
+            arr.push(no);
+          }
+        }
+        issues = [...arr];
+      }
+
       core.info(`[Action: Query Issues][${issues}]`);
       core.setOutput('issues', issues);
 
