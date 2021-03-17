@@ -8,10 +8,11 @@ jobs:
   welcome:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions-cool/pr-extract-issues@main
+      - uses: actions-cool/pr-extract-issues@t
         with:
           way: 'commit'
           issues-labels: 'l1, l2'
+          filter-label: 'bug'
           issues-comment: |
             HI。这个 issue: ${number} 已经被修复了。
           issues-close: true
