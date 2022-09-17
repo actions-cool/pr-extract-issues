@@ -25,7 +25,7 @@ jobs:
   extract:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions-cool/pr-extract-issues@v1.1.0
+      - uses: actions-cool/pr-extract-issues@v1
         with:
           way: 'commit'
           issues-labels: 'l1, l2'
