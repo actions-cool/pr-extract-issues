@@ -29,6 +29,7 @@ jobs:
         with:
           way: 'commit'
           issues-labels: 'l1, l2'
+          remove-labels: 'bug1, bug2'
           issues-comment: |
             HI。这个 issue: ${number} 已经被修复了。
           issues-close: true
