@@ -4,7 +4,7 @@
 [![](https://img.shields.io/badge/marketplace-pr--extract--issues-blueviolet?style=flat-square)](https://github.com/marketplace/actions/pr-extract-issues)
 [![](https://img.shields.io/github/v/release/actions-cool/pr-extract-issues?style=flat-square&color=orange)](https://github.com/actions-cool/pr-extract-issues/releases)
 
-A GitHub Action help you extract issues from pr commit or title or body.
+A GitHub Action help you extract issues 2from pr commit or title or body.
 
 ## 🚀 How to use?
 
