@@ -1,7 +1,7 @@
 const core = require('@actions/core');
 const { Octokit } = require('@octokit/rest');
 const github = require('@actions/github');
-const { dealStringToArr } = require('actions-util');
+const { dealStringToArr, THANKS } = require('actions-util');
 
 // **********************************************************
 const token = core.getInput('token');
@@ -78,6 +78,8 @@ async function run() {
       core.setOutput('issues', issues);
 
       const labels = core.getInput('issues-labels');
+      const removeLabelsString = core.getInput('remove-labels');
+      const removeLabels = dealStringToArr(removeLabelsString);
       const comment = core.getInput('issues-comment');
       const close = core.getInput('issues-close');
 
@@ -94,6 +96,17 @@ async function run() {
             labels: dealStringToArr(labels),
           });
           core.info(`Actions: [add-labels][${issue}][${labels}] success!`);
+        }
+        if (removeLabels && removeLabels.length) {
+          for (const label of removeLabels) {
+            await octokit.issues.removeLabel({
+              owner,
+              repo,
+              issue_number: issue,
+              name: label,
+            });
+            core.info(`Actions: [remove-label][${issue}][${label}] success!`);
+          }
         }
         if (comment) {
           const body = comment.replace('${number}', `#${issue}`);
@@ -118,6 +131,7 @@ async function run() {
     } else {
       core.setFailed(outEventErr);
     }
+    core.info(THANKS);
   } catch (error) {
     core.setFailed(error.message);
   }

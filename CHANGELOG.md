@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.2.0
+
+`2022.09.17`
+
+- feat: support `remove-labels`.
+
 ## v1.1.0
 
 `2021.03.17`

@@ -22,6 +22,8 @@ inputs:
     description: Extra operations on issues
   issues-comment:
     description: Extra operations on issues
+  remove-labels:
+    description: Will remove labels on issues
   issues-close:
     description: Extra operations on issues
 

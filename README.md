@@ -42,6 +42,7 @@ jobs:
 | way | The way to query issues. Options: `title` `body` `commit` | string | ✔ |
 | filter-label | Further filter issues through label | string | ✖ |
 | issues-labels | Extra labels on issues | string | ✖ |
+| remove-labels | Remove labels on issues | string | ✖ |
 | issues-comment | Extra comment on issues | string | ✖ |
 | issues-close | Extra close issues | string | ✖ |
 
