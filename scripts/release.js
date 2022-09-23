@@ -31,7 +31,7 @@ function getChangelog(content) {
       }
     }
   }
-  return changeLog.join('\n');
+  return changeLog.join('\n\n');
 }
 
 const changelogPath = path.join(__dirname, '..', CHANGELOG_NAME);
