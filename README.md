@@ -13,7 +13,7 @@ A GitHub Action help you extract issues from pr commit or title or body.
 https://github.com/actions-cool/pr-extract-issues/pull/15
 
 > Please pay attention to the trigger timing
-
+2
 ```yml
 name: PR Extract Issues
 
