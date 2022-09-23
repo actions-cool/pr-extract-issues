@@ -58,7 +58,7 @@ async function run() {
       const filterLabel = core.getInput('filter-label');
       if (filterLabel) {
         let arr = [];
-        for await (let no of issues) {
+        for await (const no of issues) {
           const {
             data: { labels },
           } = await octokit.issues.get({
@@ -87,7 +87,7 @@ async function run() {
         return false;
       }
 
-      for await (let issue of issues) {
+      for await (const issue of issues) {
         if (labels) {
           await octokit.issues.addLabels({
             owner,
@@ -98,7 +98,14 @@ async function run() {
           core.info(`Actions: [add-labels][${issue}][${labels}] success!`);
         }
         if (removeLabels && removeLabels.length) {
-          for (const label of removeLabels) {
+          const issueInfo = await octokit.issues.get({
+            owner,
+            repo,
+            issue_number: issue,
+          });
+          const baseLabels = issueInfo.data.labels.map(({ name }) => name);
+          const removes = baseLabels.filter(name => removeLabels.includes(name));
+          for (const label of removes) {
             await octokit.issues.removeLabel({
               owner,
               repo,
