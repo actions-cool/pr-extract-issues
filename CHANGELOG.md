@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.2.1
+
+`2022.09.23`
+
+- fix: remove no exit label.
+
 ## v1.2.0
 
 `2022.09.17`
