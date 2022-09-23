@@ -14,7 +14,7 @@ https://github.com/actions-cool/pr-extract-issues/pull/15
 
 > Please pay attention to the trigger timing
 
-```yml
+```yml1
 name: PR Extract Issues
 
 on:
