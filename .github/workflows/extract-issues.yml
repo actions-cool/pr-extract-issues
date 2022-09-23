@@ -12,7 +12,7 @@ jobs:
         with:
           way: 'title'
           issues-labels: 'l1, l2'
-          remove-labels: 'bug'
+          remove-labels: 'bug, bug2'
           filter-label: 'bug'
           issues-comment: |
             HI。这个 issue: ${number} 已经被修复了。
