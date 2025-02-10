@@ -27,7 +27,7 @@ async function run() {
             issues.push(it.replace('#', ''));
           }
         });
-      } else if (way === 'body') {
+      } else if (way === 'body' && body) {
         let arr = body.split('\n');
         arr.forEach(it => {
           if (it.startsWith('#')) {
